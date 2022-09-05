@@ -1,0 +1,400 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI.theme" type="Theme" id=1]
+[ext_resource path="res://Scripts/Config.gd" type="Script" id=2]
+
+[node name="Config" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="CoordModeL" type="Label" parent="."]
+margin_left = 239.0
+margin_right = 361.0
+margin_bottom = 19.0
+size_flags_horizontal = 4
+theme = ExtResource( 1 )
+text = "Coordinate mode"
+
+[node name="CoordMode" type="OptionButton" parent="."]
+margin_top = 23.0
+margin_right = 600.0
+margin_bottom = 48.0
+theme = ExtResource( 1 )
+text = "Relative position"
+items = [ "Relative position", null, false, 0, null, "Relative view", null, false, 1, null, "Global position", null, false, 2, null ]
+selected = 0
+
+[node name="PositionShift" type="Label" parent="."]
+margin_left = 254.0
+margin_top = 52.0
+margin_right = 346.0
+margin_bottom = 71.0
+size_flags_horizontal = 4
+theme = ExtResource( 1 )
+text = "Shift position"
+
+[node name="Pos" type="HBoxContainer" parent="."]
+margin_top = 75.0
+margin_right = 600.0
+margin_bottom = 104.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Pos"]
+margin_top = 5.0
+margin_right = 11.0
+margin_bottom = 24.0
+text = "X"
+
+[node name="X" type="SpinBox" parent="Pos"]
+margin_left = 15.0
+margin_right = 197.0
+margin_bottom = 29.0
+size_flags_horizontal = 3
+min_value = -10.0
+max_value = 10.0
+step = 0.001
+
+[node name="Label2" type="Label" parent="Pos"]
+margin_left = 201.0
+margin_top = 5.0
+margin_right = 212.0
+margin_bottom = 24.0
+text = "Y"
+
+[node name="Y" type="SpinBox" parent="Pos"]
+margin_left = 216.0
+margin_right = 399.0
+margin_bottom = 29.0
+size_flags_horizontal = 3
+min_value = -10.0
+max_value = 10.0
+step = 0.001
+
+[node name="Label3" type="Label" parent="Pos"]
+margin_left = 403.0
+margin_top = 5.0
+margin_right = 413.0
+margin_bottom = 24.0
+text = "Z"
+
+[node name="Z" type="SpinBox" parent="Pos"]
+margin_left = 417.0
+margin_right = 600.0
+margin_bottom = 29.0
+size_flags_horizontal = 3
+min_value = -10.0
+max_value = 10.0
+step = 0.001
+
+[node name="Plane&Rotation" type="Label" parent="."]
+margin_left = 232.0
+margin_top = 108.0
+margin_right = 367.0
+margin_bottom = 127.0
+size_flags_horizontal = 4
+theme = ExtResource( 1 )
+text = "Plane and Rotation"
+
+[node name="Plane" type="HBoxContainer" parent="."]
+margin_top = 131.0
+margin_right = 600.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="PlaneL" type="Label" parent="Plane"]
+margin_left = 134.0
+margin_top = 5.0
+margin_right = 208.0
+margin_bottom = 24.0
+theme = ExtResource( 1 )
+text = "Plane axis"
+
+[node name="PlaneAxis" type="OptionButton" parent="Plane"]
+margin_left = 212.0
+margin_right = 267.0
+margin_bottom = 29.0
+theme = ExtResource( 1 )
+text = "X-Z"
+items = [ "X-Z", null, false, 0, null, "X-Y", null, false, 1, null, "Z-Y", null, false, 2, null ]
+selected = 0
+
+[node name="Flip" type="CheckBox" parent="Plane"]
+margin_left = 271.0
+margin_right = 325.0
+margin_bottom = 29.0
+theme = ExtResource( 1 )
+text = "Flip"
+align = 2
+
+[node name="RotationL" type="Label" parent="Plane"]
+margin_left = 329.0
+margin_top = 5.0
+margin_right = 388.0
+margin_bottom = 24.0
+theme = ExtResource( 1 )
+text = "Rotation"
+
+[node name="Rotation" type="SpinBox" parent="Plane"]
+margin_left = 392.0
+margin_right = 466.0
+margin_bottom = 29.0
+min_value = -180.0
+max_value = 180.0
+step = 0.1
+
+[node name="AlignLabel" type="Label" parent="."]
+margin_top = 164.0
+margin_right = 600.0
+margin_bottom = 183.0
+theme = ExtResource( 1 )
+text = "Alignment"
+align = 1
+
+[node name="AlignHV" type="GridContainer" parent="."]
+margin_top = 187.0
+margin_right = 600.0
+margin_bottom = 235.0
+columns = 2
+
+[node name="HorisontalLabel" type="Label" parent="AlignHV"]
+margin_right = 298.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+theme = ExtResource( 1 )
+text = "Horisontal"
+align = 1
+
+[node name="VerticalLabel" type="Label" parent="AlignHV"]
+margin_left = 302.0
+margin_right = 600.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+theme = ExtResource( 1 )
+text = "Vertical"
+align = 1
+
+[node name="Horisontal" type="OptionButton" parent="AlignHV"]
+margin_top = 23.0
+margin_right = 298.0
+margin_bottom = 48.0
+size_flags_horizontal = 3
+theme = ExtResource( 1 )
+text = "Center"
+align = 1
+items = [ "Left", null, false, 0, null, "Center", null, false, 1, null, "Right", null, false, 2, null ]
+selected = 1
+
+[node name="Vertical" type="OptionButton" parent="AlignHV"]
+margin_left = 302.0
+margin_top = 23.0
+margin_right = 600.0
+margin_bottom = 48.0
+size_flags_horizontal = 3
+theme = ExtResource( 1 )
+text = "Center"
+align = 1
+items = [ "Top", null, false, 0, null, "Center", null, false, 1, null, "Bottom", null, false, 2, null ]
+selected = 1
+
+[node name="ParticleLabel" type="Label" parent="."]
+margin_top = 239.0
+margin_right = 600.0
+margin_bottom = 258.0
+theme = ExtResource( 1 )
+text = "Particle Settings"
+align = 1
+
+[node name="Particle" type="GridContainer" parent="."]
+margin_top = 262.0
+margin_right = 600.0
+margin_bottom = 314.0
+columns = 2
+
+[node name="SizeLabel" type="Label" parent="Particle"]
+margin_right = 298.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+text = "Particle Size"
+align = 1
+
+[node name="DensityLabel" type="Label" parent="Particle"]
+margin_left = 302.0
+margin_right = 600.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+text = "Particle Density"
+align = 1
+
+[node name="Size" type="SpinBox" parent="Particle"]
+margin_top = 23.0
+margin_right = 298.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+max_value = 5.0
+step = 0.001
+value = 0.75
+
+[node name="Density" type="SpinBox" parent="Particle"]
+margin_left = 302.0
+margin_top = 23.0
+margin_right = 600.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+max_value = 40.0
+value = 8.0
+
+[node name="AutoSize" type="CheckBox" parent="."]
+margin_left = 229.0
+margin_top = 318.0
+margin_right = 371.0
+margin_bottom = 345.0
+size_flags_horizontal = 4
+pressed = true
+text = "Auto size image"
+align = 2
+
+[node name="NotAutoSize" type="VBoxContainer" parent="."]
+margin_top = 349.0
+margin_right = 600.0
+margin_bottom = 555.0
+
+[node name="SizeBlocksL" type="Label" parent="NotAutoSize"]
+margin_right = 600.0
+margin_bottom = 19.0
+theme = ExtResource( 1 )
+text = "Image size (in blocks)"
+align = 1
+
+[node name="SizeBlocks" type="GridContainer" parent="NotAutoSize"]
+margin_top = 23.0
+margin_right = 600.0
+margin_bottom = 75.0
+columns = 2
+
+[node name="WidthL" type="Label" parent="NotAutoSize/SizeBlocks"]
+margin_right = 298.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+theme = ExtResource( 1 )
+text = "Width"
+align = 1
+
+[node name="HeightL" type="Label" parent="NotAutoSize/SizeBlocks"]
+margin_left = 302.0
+margin_right = 600.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+theme = ExtResource( 1 )
+text = "Heigth"
+align = 1
+
+[node name="Width" type="SpinBox" parent="NotAutoSize/SizeBlocks"]
+margin_top = 23.0
+margin_right = 298.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+max_value = 20.0
+step = 0.001
+value = 1.0
+
+[node name="Height" type="SpinBox" parent="NotAutoSize/SizeBlocks"]
+margin_left = 302.0
+margin_top = 23.0
+margin_right = 600.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+max_value = 20.0
+step = 0.001
+value = 1.0
+
+[node name="SizeParticlesL" type="Label" parent="NotAutoSize"]
+margin_top = 79.0
+margin_right = 600.0
+margin_bottom = 98.0
+theme = ExtResource( 1 )
+text = "Number of particles"
+align = 1
+
+[node name="SizeParticles" type="GridContainer" parent="NotAutoSize"]
+margin_top = 102.0
+margin_right = 600.0
+margin_bottom = 154.0
+columns = 2
+
+[node name="WidthL" type="Label" parent="NotAutoSize/SizeParticles"]
+margin_right = 298.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+theme = ExtResource( 1 )
+text = "Width"
+align = 1
+
+[node name="HeightL" type="Label" parent="NotAutoSize/SizeParticles"]
+margin_left = 302.0
+margin_right = 600.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+theme = ExtResource( 1 )
+text = "Heigth"
+align = 1
+
+[node name="Width" type="SpinBox" parent="NotAutoSize/SizeParticles"]
+margin_top = 23.0
+margin_right = 298.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+max_value = 640.0
+value = 8.0
+
+[node name="Height" type="SpinBox" parent="NotAutoSize/SizeParticles"]
+margin_left = 302.0
+margin_top = 23.0
+margin_right = 600.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+max_value = 640.0
+value = 8.0
+
+[node name="SizeInterpolL" type="Label" parent="NotAutoSize"]
+margin_left = 239.0
+margin_top = 158.0
+margin_right = 360.0
+margin_bottom = 177.0
+size_flags_horizontal = 4
+text = "Interpolation type"
+
+[node name="OptionButton" type="OptionButton" parent="NotAutoSize"]
+margin_left = 248.0
+margin_top = 181.0
+margin_right = 352.0
+margin_bottom = 206.0
+size_flags_horizontal = 4
+text = "NEAREST"
+items = [ "NEAREST", null, false, 0, null, "BILINEAR", null, false, 1, null, "CUBIC", null, false, 2, null, "TRILINEAR", null, false, 3, null, "LANCZOS", null, false, 4, null ]
+selected = 0
+
+[connection signal="item_selected" from="CoordMode" to="." method="_on_CoordinateMode"]
+[connection signal="value_changed" from="Pos/X" to="." method="_on_X_value"]
+[connection signal="value_changed" from="Pos/Y" to="." method="_on_Y_value"]
+[connection signal="value_changed" from="Pos/Z" to="." method="_on_Z_value"]
+[connection signal="item_selected" from="Plane/PlaneAxis" to="." method="_on_PlaneAxis"]
+[connection signal="toggled" from="Plane/Flip" to="." method="_on_Flip"]
+[connection signal="value_changed" from="Plane/Rotation" to="." method="_on_RotationP"]
+[connection signal="item_selected" from="AlignHV/Horisontal" to="." method="_on_AlignH"]
+[connection signal="item_selected" from="AlignHV/Vertical" to="." method="_on_AlignV"]
+[connection signal="value_changed" from="Particle/Size" to="." method="_on_ParticleSize"]
+[connection signal="value_changed" from="Particle/Density" to="." method="_on_ParticleDensity"]
+[connection signal="toggled" from="AutoSize" to="." method="onAutoSizeToggle"]
+[connection signal="value_changed" from="NotAutoSize/SizeBlocks/Width" to="." method="_on_WidthB"]
+[connection signal="value_changed" from="NotAutoSize/SizeBlocks/Height" to="." method="_on_HeightB"]
+[connection signal="value_changed" from="NotAutoSize/SizeParticles/Width" to="." method="_on_WidthP"]
+[connection signal="value_changed" from="NotAutoSize/SizeParticles/Height" to="." method="_on_HeightP"]
+[connection signal="item_selected" from="NotAutoSize/OptionButton" to="." method="_on_Interpolation"]
